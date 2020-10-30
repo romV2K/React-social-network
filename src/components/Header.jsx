@@ -1,13 +1,14 @@
+import styles from "./Header.module.css";
+import "../App.css"
 
 const Header = () => {
   return (
       <header>
-        <div className="header-top-bar">
-          <img className = "logo logoRotation" src="https://cdn.worldvectorlogo.com/logos/react-native-firebase-1.svg" alt="logo"></img>
+        <div className={`${styles.headerTopBar}`}>
+          <img className = {`${styles.logo} logoRotation` } src="https://cdn.worldvectorlogo.com/logos/react-native-firebase-1.svg" alt="logo"></img>
         </div>
         
-        <div className="img-div">
-          <img src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/2/india-colors-abstract-wide-sunset-2-stefano-senise.jpg"></img>
+        <div className={`${styles.imgDiv}`}>
         </div>
       </header>
   );

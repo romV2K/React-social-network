@@ -1,0 +1,28 @@
+/* HEADER */
+header{
+  width: auto;
+  height: auto;
+  grid-area: header;
+}
+.headerTopBar{
+  width: auto;
+  height: auto;
+  background-color: black;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+  width: 55px;
+  height: 55px;
+}
+.imgDiv{
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  background: rgb(62,34,195);
+  background: linear-gradient(0deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
+}
+

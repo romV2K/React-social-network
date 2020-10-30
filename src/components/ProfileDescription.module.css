@@ -1,0 +1,60 @@
+.description p{
+  margin-bottom: 10px;
+}
+.avatarContainer{
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  align-self: baseline;
+}
+
+.avatarProfileDerscription{
+  padding: 10px;
+  background-color: white;
+}
+.avatarDescription{
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userName{
+     font-size: 1.5rem;
+}
+.newPost{
+  font-size: 1.5rem;
+}
+.newPostBlock{
+  padding: 20px;
+  background-color: white;
+}
+.newPostInput{
+  width: 80%;
+  height: 120px;
+  border-radius: 10px;
+  border: 2px solid #4339c2;
+}
+.newPostSend{
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: 0px;
+  color: white;
+  font-size: 15px;
+  background: black;
+  cursor: pointer;
+}
+.newPostSend:active{
+  color: white;
+  background-color: #4339c2;
+}

@@ -1,12 +1,13 @@
+import styles from './Posts.module.css';
 
 const Posts = () => {
   return (
-        <div className="posts">
-          <div className="post post-padding">
-              <p className="post-name">
+        <div className={`${styles.posts}`}>
+          <div className = {`${styles.post} ${styles.postPadding}`}>
+              <p className={`${styles.postName}`}>
                 Lorem, ipsum.
               </p>
-              <p className="post-text">
+              <p className={`${styles.postText}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vitae ad odit alias rem soluta voluptatum quam tempore et aspernatur?
               </p>
           </div>
