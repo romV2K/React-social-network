@@ -1,10 +1,4 @@
 /* posts */
-.posts{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .postPadding{
   margin: 20px 0px 20px 0px;
 }

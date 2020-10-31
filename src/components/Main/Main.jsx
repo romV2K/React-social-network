@@ -1,6 +1,6 @@
-import Nav from "./Nav";
-import ProfileDescription from "./ProfileDescription";
-import Posts from "./Posts";
+import Nav from "../Navbar/Nav";
+import ProfileDescription from "../Profile/ProfileDescription/ProfileDescription";
+import Posts from "../Profile/Posts/Posts";
 import styles from "./Main.module.css"
 
 
@@ -10,7 +10,7 @@ const Main = () => {
       <Nav/>
       <ProfileDescription/>
       <div className={`${styles.container}`}>
-          <Posts/>
+      <Posts/>
       </div>
     </main>
   );

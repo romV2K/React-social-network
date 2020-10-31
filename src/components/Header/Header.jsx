@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import "../App.css"
+import ".././../App.css"
 
 const Header = () => {
   return (
@@ -9,6 +9,7 @@ const Header = () => {
         </div>
         
         <div className={`${styles.imgDiv}`}>
+          <p>React Society</p>
         </div>
       </header>
   );
