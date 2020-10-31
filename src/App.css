@@ -1,3 +1,16 @@
+body{
+  background: linear-gradient(180deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
+  background-size: 300% 300%;
+  font-family: 'Poppins';
+  animation: gradientAnim 30s ease infinite;
+
+}
+textarea:focus,input:focus,button:focus{
+  outline: none;
+}
+p{
+  margin: 0px;
+}
 a{
   text-decoration: none;
   color: black;
@@ -6,27 +19,11 @@ a{
 a:hover{
   text-decoration: none;
 }
-.list-item{
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  width: 100%;
-}
-.list-item:hover{
-  text-decoration: none;
-  background-color: black;
-  color: white;
-
-}
 
 .App {
   text-align: center;
 }
+
 .app-wrapper{
   display: grid;
   width: 100%;
@@ -34,64 +31,21 @@ a:hover{
   column-gap:30px;
   grid-template-areas: 
   "header "
-  "main"
-  /* "footer footer footer"; */;
+  "main";
 }
 
-header{
-  width: auto;
-  height: auto;
-  background-color: black;
-  padding: 10px 10px 10px 10px;
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-main{
-  grid-area: main;
-  /* padding: 10px 10px 10px 10x; */
-}
-.img-div{
-  width: 100%;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-.img-div img{
-  height: inherit;
-  width: 100%;
-}
 
-nav{
-  grid-area: nav;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-}
-.nav-list{
-  width: 40%;
-  display: flex;
-  justify-content: space-between;
-}
 
-footer{
-  grid-area: footer;
-  background-color: orange;
-  padding: 10px 10px 10px 10px;
-}
 
-.logo{
-  width: 55px;
-  height: 55px;
-}
 
+
+
+/* ANIMATIONS */
 .logoRotation{
   animation: 5s linear 0s normal none infinite running logoRotation;
   -webkit-animation: 5s linear 0s normal none infinite running logoRotation;
 }
-
 
 @keyframes logoRotation{
   0%{
@@ -109,3 +63,19 @@ footer{
     -o-transform: rotate(360deg);
 }
 }
+@keyframes gradientAnim {
+    0%{background-position:0% 91%}
+    50%{background-position:100% 10%}
+    100%{background-position:0% 91%}
+}
+
+/* ______ */
+
+/* MEDIA QUERIES */
+@media all and (max-width:560px){
+  .nav-list{
+    width: auto;
+  }
+}
+
+/* ______ */
