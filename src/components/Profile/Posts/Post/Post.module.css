@@ -5,6 +5,7 @@
 .post{
   padding: 10px;
   width: auto;
+  max-width: 1000px;
   height: auto;
   min-height: 200px;
   background-color: white;
@@ -14,8 +15,62 @@
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-.postName{
+.avatarAndLoginName{
+  display: flex;
+  align-items: center;
+}
+.avatarAndLoginName p{
+  margin-bottom: 0px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+.loginName{
   font-size: 30px;
   margin-bottom: 20px;
+}
+.avatarConteiner{
+  width: 50px;
+  height: 50px;
+  overflow:hidden;
+}
+.avatarImg{
+  width: 100%;
+  height: auto;
+}
+.postsTextConteiner{
+  padding: 20px;
+}
+.postImgContainer{
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.postImgContainer img{
+  min-width:700px;
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  height: auto;
+}
+.likesCommentsReposts{
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.likes{
+
+}
+.comments{
+
+}
+.reposts{
+
 }
 /* ______ */

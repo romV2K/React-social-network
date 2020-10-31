@@ -6,6 +6,20 @@ const Posts = () => {
   return (
         <div className={`${styles.posts}`}>
               <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
+              <Post/>
         </div>
   );
 }

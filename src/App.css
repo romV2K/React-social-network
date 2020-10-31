@@ -1,5 +1,6 @@
 body{
   background-color: #edf1f5;
+  font-family: 'Poppins';
 }
 textarea:focus,input:focus,button:focus{
   outline: none;

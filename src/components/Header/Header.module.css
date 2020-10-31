@@ -29,6 +29,9 @@ header{
 }
 .imgDiv p{
  font-size: 60px;
-
+ font-family: Poppins;
+ color: white;
+ font-weight: 800;
+ letter-spacing: 15px;
 }
 
