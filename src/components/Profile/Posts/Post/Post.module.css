@@ -38,7 +38,7 @@
   height: auto;
 }
 .postsTextConteiner{
-  padding: 20px;
+  padding: 20px 20px 20px 5px;
 }
 .postImgContainer{
   width: 100%;
@@ -49,7 +49,7 @@
   align-items: center;
 }
 .postImgContainer img{
-  min-width:700px;
+  /* min-width:700px; */
   width: 100%;
   height: auto;
   border-radius: 25px;

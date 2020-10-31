@@ -1,8 +1,13 @@
-
 .profileContainer{
   width: auto;
   height: auto;
-  margin: 0% 20px 2% 20px;
+  margin: 0% 2% 20px 2%;
+  background-color: white;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
 }
 .description p{
   margin-bottom: 10px;
@@ -23,8 +28,8 @@
   height: auto;
 }
 .avatarProfileDerscription{
-  padding: 10px;
-  background-color: white;
+  padding: 20px 20px 0px 20px;
+  /* background-color: white; */
   border-radius: 25px 25px 0px 0px;
 }
 .avatarDescription{
@@ -41,7 +46,6 @@
 }
 .newPostBlock{
   padding: 20px;
-  background-color: white;
   border-radius: 0px 0px 25px 25px;
   -webkit-border-radius: 0px 0px 25px 25px;
   -moz-border-radius: 0px 0px 25px 25px;
@@ -63,7 +67,6 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   border: 0px;
-  color: white;
   font-size: 15px;
   background: black;
   cursor: pointer;

@@ -6,10 +6,10 @@ const NewPost  = () => {
           <div className={`${styles.newPostInputBlock}`}>
             <p className={`${styles.newPost}`}>New post</p>
             <textarea className={`${styles.newPostInput}`}></textarea>
-          </div>
             <button className={`${styles.newPostSend}`}>
               SEND
             </button>
+          </div>
         </div>
      )
 }

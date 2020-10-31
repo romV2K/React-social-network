@@ -7,19 +7,6 @@ const Posts = () => {
         <div className={`${styles.posts}`}>
               <Post/>
               <Post/>
-              {/* <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/>
-              <Post/> */}
         </div>
   );
 }
