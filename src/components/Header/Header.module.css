@@ -25,7 +25,7 @@ header{
   height: 200px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(0deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
+  /* background: linear-gradient(0deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%); */
 }
 .imgDiv p{
  font-size: 60px;
