@@ -20,6 +20,11 @@ nav{
   -o-transition: 0.3s;
   width: 100%;
 }
+
+.active{
+  background-color: white;
+  color: black;
+}
 .listItem:hover{
   text-decoration: none;
   background-color: white;
