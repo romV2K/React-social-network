@@ -15,20 +15,12 @@ const Messages = (props) => {
     {id:7, name:'Dima'},
     {id:8, name:'Andriy'},
   ]
-
+  let dialogsElements = dialogsData.map(d=><Dialog name={d.name} id={d.id} />)
   return (
     <div className={`${styles.dialogsMessagesContainer}`}>
       <div className={`${styles.dialogsContainer}`}>
         <div className={styles.dialogs}>
-          <Dialog name={dialogsData[0].name} id={dialogsData[0].id} />
-          <Dialog name={dialogsData[1].name} id={dialogsData[2].id} />
-          {/* <Dialog name='Anya' id='2' />
-          <Dialog name='Vitalik' id='3' />
-          <Dialog name='Boghdan' id='4' />
-          <Dialog name='Nazar' id='5' />
-          <Dialog name='Nastya' id='6' />
-          <Dialog name='Dima' id='7' />
-          <Dialog name='Andriy' id='8' /> */}
+          {dialogsElements}
         </div>
       </div>
       <Chat/>
