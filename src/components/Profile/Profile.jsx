@@ -1,17 +1,16 @@
 import ProfileDescription from "../Profile/ProfileDescription/ProfileDescription";
 import Posts from "../Profile/Posts/Posts";
-import styles from "./Main.module.css"
+import styles from "./Profile.module.css"
 
-
-const Main = () => {
+const Profile = (props) => {
   return (
     <main>
       <ProfileDescription/>
       <div className={`${styles.container}`}>
-      <Posts/>
+        <Posts postsData={props.postsData} />
       </div>
     </main>
   );
 }
 
-export default Main;
+export default Profile;

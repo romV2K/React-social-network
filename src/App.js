@@ -1,27 +1,31 @@
 import './App.css';
 import Nav from "./components/Navbar/Nav";
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Home from './components/Home/Home';
 
+import Profile from './components/Profile/Profile'
 import Messages from './components/Messages/Messages';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, BrowserRouter, Redirect } from 'react-router-dom'
 
-const App = () => {
+const App = (props) => {
+  
   return (
     <BrowserRouter>
         <Header/>
         <Nav/>
         <div className="">
-          <Route path='/Profile' component={Main} />
-          <Route path='/Messages' component={Messages} />
-          <Route path='/News' component={News} />
-          <Route path='/Music' component={Music} />
-          <Route path='/Settings' component={Settings} />
+          <Redirect from='/' to='/Home'/>
+          <Route path='/Home' render={() => <Home postsData={props.postsData} />} />
+          <Route path='/Profile' render={ () => <Profile postsData={props.postsData}/> }/>
+          <Route path='/Messages' render={() => <Messages chatData={props.chatData} dialogsData={props.dialogsData}/>} />
+          <Route path='/News' render={() =><News/>} />
+          <Route path='/Music' render={() =><Music/>} />
+          <Route path='/Settings' render={() =><Settings/>} />
         </div>
     </BrowserRouter>
   );

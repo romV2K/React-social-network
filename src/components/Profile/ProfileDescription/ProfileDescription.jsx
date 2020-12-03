@@ -2,10 +2,6 @@ import NewPost from './NewPost/NewPost'
 import styles from './ProfileDescription.module.css'
 import Description from './Description/Description'
 
-
-
-
-
 const ProfileDescription = (props) => {
   return (
     <div className={`${styles.profileContainer}`}>

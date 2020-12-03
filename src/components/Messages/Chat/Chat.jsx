@@ -2,9 +2,7 @@ import styles from './Chat.module.css';
 import ChatMessage from './ChatMessage/ChatMessage';
 
 const Chat = (props) => {
-
-
-
+  
   let chatElements = props.chatData.map((c,i) => <ChatMessage key={i} text={c.chatMessage} time={c.time}/> )//chat data maping
 
   return (
