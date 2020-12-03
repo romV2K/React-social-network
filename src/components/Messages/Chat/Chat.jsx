@@ -2,12 +2,10 @@ import styles from './Chat.module.css';
 import ChatMessage from './ChatMessage/ChatMessage';
 
 const Chat = (props) => {
-  let chatData = [
-    {id:1, chatMessage:'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique distinctio recusandae culpa iure ducimus perferendis unde sed quae. Adipisci voluptates blanditiis maiores ab recusandae provident dolor porro ea, mollitia vero?', time:'11:44'},
-  ]//chat data
 
 
-  let chatElements = chatData.map(c => <ChatMessage text={c.chatMessage} time={c.time}/> )//chat data maping
+
+  let chatElements = props.chatData.map((c,i) => <ChatMessage key={i} text={c.chatMessage} time={c.time}/> )//chat data maping
 
   return (
       <div className={`${styles.messagesContainer}`}>

@@ -1,4 +1,4 @@
-import ProfileDescription from "../Profile/Posts/ProfileDescription/ProfileDescription";
+import ProfileDescription from "../Profile/ProfileDescription/ProfileDescription";
 import Posts from "../Profile/Posts/Posts";
 import styles from "./Main.module.css"
 
