@@ -4,7 +4,7 @@ import Chat from './Chat/Chat'
 
 const Messages = (props) => {
 
-  let dialogsElements = props.dialogsData.map((d, i) => <Dialog key={i} name={d.name} id={d.id} />)
+  let dialogsElements = props.state.dialogs.map((d, i) => <Dialog key={i} name={d.name} id={d.id} />)
   
   return (
     <main className={`${styles.dialogsMessagesContainer}`}>
@@ -13,7 +13,7 @@ const Messages = (props) => {
           {dialogsElements}
         </div>
       </div>
-      <Chat chatData = {props.chatData}/>
+      <Chat messages = {props.state.messages}/>
     </main>
   );
 }
