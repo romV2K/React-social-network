@@ -1,6 +1,6 @@
 body{
-  background: linear-gradient(180deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
-  background-size: 300% 300%;
+  background: linear-gradient(260deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
+  background-size: 400% 400%;
   font-family: 'Poppins';
   animation: gradientAnim 30s ease infinite;
 
@@ -34,41 +34,17 @@ a:hover{
   "main";
 }
 
-
-
-
-
-
-
-
 /* ANIMATIONS */
 .logoRotation{
   animation: 5s linear 0s normal none infinite running logoRotation;
   -webkit-animation: 5s linear 0s normal none infinite running logoRotation;
 }
 
-@keyframes logoRotation{
-  0%{
-    transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-}
-}
 @keyframes gradientAnim {
-    0%{background-position:0% 91%}
-    50%{background-position:100% 10%}
-    100%{background-position:0% 91%}
+  0%{background-position:0% 91%}
+  50%{background-position:100% 10%}
+  100%{background-position:0% 91%}
 }
-
 /* ______ */
 
 /* MEDIA QUERIES */

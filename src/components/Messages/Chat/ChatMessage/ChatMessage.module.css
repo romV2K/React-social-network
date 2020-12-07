@@ -1,0 +1,30 @@
+.chatMessage{
+     width: fit-content;
+     min-width: 200px;
+     max-width: 70%;
+     height: auto;
+     min-height: 50px;
+     background-color: white;
+     border: 0;
+     border-radius: 25px;
+     -webkit-border-radius: 25px;
+     -moz-border-radius: 25px;
+     -ms-border-radius: 25px;
+     -o-border-radius: 25px;
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     flex-direction: column;
+}
+
+.FromMe{
+     margin-left: auto;
+}
+
+.text{
+     font-size: 14px;
+}
+.time{
+     display: block;
+     align-self: flex-end;
+}

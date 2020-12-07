@@ -1,13 +1,33 @@
 import './App.css';
+import Nav from "./components/Navbar/Nav";
 import Header from './components/Header/Header';
-import Main from './components/Main/Main';
+import Home from './components/Home/Home';
 
-const App = () => {
+import Profile from './components/Profile/Profile'
+import Messages from './components/Messages/Messages';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Settings from './components/Settings/Settings';
+
+
+import { Route, BrowserRouter, Redirect } from 'react-router-dom'
+
+const App = (props) => {
+  
   return (
-      <div className="app-wrapper">
+    <BrowserRouter>
         <Header/>
-          <Main/>
-    </div>
+        <Nav/>
+        <div className="">
+          <Redirect from='/' to='/Home'/>
+          <Route path='/Home' render={() => <Home state={props.state.profilePage} />} />
+          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage}/> }/>
+          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} />} />
+          <Route path='/News' render={() =><News/>} />
+          <Route path='/Music' render={() =><Music/>} />
+          <Route path='/Settings' render={() =><Settings/>} />
+        </div>
+    </BrowserRouter>
   );
 }
 
