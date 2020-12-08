@@ -4,8 +4,8 @@ import styles from "./Profile.module.css"
 
 const Profile = (props) => {
   return (
-    <main>
-      <ProfileDescription/>
+    <main className={`${styles.profileMainContainer}`}>
+      <ProfileDescription addPost={props.addPost}/>
       <div className={`${styles.container}`}>
         <Posts posts={props.state.posts} />
       </div>
