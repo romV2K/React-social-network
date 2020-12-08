@@ -62,6 +62,7 @@ export let addPost = (postMessage)=>{
 
      state.profilePage.posts.push(newPost)
      rerenderEntireTree(state)
+     //email test
 }
 
 export default state;
