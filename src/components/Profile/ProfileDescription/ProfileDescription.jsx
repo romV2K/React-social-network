@@ -6,7 +6,7 @@ const ProfileDescription = (props) => {
   return (
     <div className={`${styles.profileContainer}`}>
       <Description userName ="Roman Konopelko" avatar="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"/>
-      <NewPost addPost={props.addPost} newPostText = {props.newPostText}  onTextChange={props.onTextChange}/>
+      <NewPost addPost={props.addPost} newPostText = {props.newPostText}  onPostTextChange={props.onPostTextChange}/>
     </div>
   );
 }

@@ -47,15 +47,33 @@ let state = {
           //chat
           messages: [
                { id: 1, chatMessage: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique distinctio recusandae culpa iure ducimus perferendis unde sed quae. Adipisci voluptates blanditiis maiores ab recusandae provident dolor porro ea, mollitia vero?', time: '11:44' },
-          ]
+          ],
+          newMessageText : ''
      }
 
 }
 
 window.state = state
 
+export let addMessage = () => {
+     let newMessage = {
+          id: 1, 
+          time: '11:44',
+          chatMessage: state.messagesPage.newMessageText 
+     };
+
+     state.messagesPage.messages.push(newMessage)
+     state.messagesPage.newMessageText = ''
+     rerenderEntireTree(state)
+}
+
+export let onMessageTextChange = (inputText) => {
+
+     state.messagesPage.newMessageText = inputText
+     rerenderEntireTree(state)
+}
+
 export let addPost = () => {
-     // debugger;
      let newPost = {
           id: 2,
           loginName: '@romankonopelko',
@@ -72,10 +90,11 @@ export let addPost = () => {
      rerenderEntireTree(state)
 }
 
-export let onTextChange = (inputText) => {
+export let onPostTextChange = (inputText) => {
 
      state.profilePage.newPostText = inputText
      rerenderEntireTree(state)
 }
+
 
 export default state;

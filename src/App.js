@@ -21,8 +21,8 @@ const App = (props) => {
 
           <Redirect from='/' to='/Home'/>
           <Route path='/Home' render={() => <Home state={props.state.profilePage} addPost={props.addPost} />} />
-          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost} onTextChange={props.onTextChange}/> }/>
-          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} />} />
+          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost} onPostTextChange={props.onPostTextChange} /> }/>
+          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} addMessage={props.addMessage} onMessageTextChange={props.onMessageTextChange} />} />
           <Route path='/News' render={() =><News/>} />
           <Route path='/Music' render={() =><Music/>} />
           <Route path='/Settings' render={() =><Settings/>} />

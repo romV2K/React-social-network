@@ -4,8 +4,8 @@ import Chat from './Chat/Chat'
 
 const Messages = (props) => {
 
-  let dialogsElements = props.state.dialogs.map((d, i) => <Dialog key={i} name={d.name} id={d.id} avatar={d.avatar}  />)
-  
+  let dialogsElements = props.state.dialogs.map((d, i) => <Dialog key={i} name={d.name} id={d.id} avatar={d.avatar} />)
+
   return (
     <main className={`${styles.dialogsMessagesContainer}`}>
       <div className={`${styles.dialogsContainer}`}>
@@ -13,7 +13,7 @@ const Messages = (props) => {
           {dialogsElements}
         </div>
       </div>
-      <Chat messages = {props.state.messages}/>
+      <Chat addMessage={props.addMessage} onMessageTextChange={props.onMessageTextChange} newMessageText = {props.state.newMessageText} messages={props.state.messages} />
     </main>
   );
 }
