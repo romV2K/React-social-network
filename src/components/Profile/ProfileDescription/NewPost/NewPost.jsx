@@ -1,26 +1,25 @@
 import styles from './NewPost.module.css'
 import React from 'react'
 
-const NewPost = (props) => {
+import {addPostActionCreator,updateAddPostActionCreator} from '../../../../redux/state'
 
+const NewPost = (props) => {
   let newPostElement = React.createRef();
 
-
-
-  let addPost = () => {
-    props.addPost(props.newPostText)
+  let  addPost = () => {
+    props.dispatch(addPostActionCreator())
   }
 
-  let onTextareaChange = () =>{
+  let onPostTextChange = () =>{
     let text = newPostElement.current.value;
-    props.onTextChange(text)
+    props.dispatch(updateAddPostActionCreator(text))
   }
 
   return (
     <div className={`${styles.newPostBlock}`}>
       <div className={`${styles.newPostInputBlock}`}>
         <p className={`${styles.newPost}`}>New post</p>
-        <textarea onChange = {onTextareaChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
+        <textarea onChange = {onPostTextChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
         <button onClick={addPost} className={`${styles.newPostSend}`}>
           ADD POST
         </button>

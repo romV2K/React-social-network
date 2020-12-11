@@ -20,9 +20,9 @@ const App = (props) => {
         <Nav/>
 
           <Redirect from='/' to='/Home'/>
-          <Route path='/Home' render={() => <Home state={props.state.profilePage} addPost={props.addPost} />} />
-          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost} onTextChange={props.onTextChange}/> }/>
-          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} />} />
+          <Route path='/Home' render={() => <Home state={props.state.profilePage} dispatch={props.dispatch} />} />
+          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} dispatch={props.dispatch} /> }/>
+          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} dispatch={props.dispatch} />} />
           <Route path='/News' render={() =><News/>} />
           <Route path='/Music' render={() =><Music/>} />
           <Route path='/Settings' render={() =><Settings/>} />
