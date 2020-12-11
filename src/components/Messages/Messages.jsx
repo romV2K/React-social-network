@@ -13,7 +13,7 @@ const Messages = (props) => {
           {dialogsElements}
         </div>
       </div>
-      <Chat addMessage={props.addMessage} onMessageTextChange={props.onMessageTextChange} newMessageText = {props.state.newMessageText} messages={props.state.messages} />
+      <Chat dispatch={props.dispatch} newMessageText = {props.state.newMessageText} messages={props.state.messages} />
     </main>
   );
 }
