@@ -8,7 +8,7 @@ import App from './App';
 export let _callSubscriber = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} addPost={store.addPost.bind(store)} addMessage={store.addMessage.bind(store)} onPostTextChange={store.onPostTextChange.bind(store)} onMessageTextChange={store.onMessageTextChange.bind(store)} />
+      <App state={state} dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>,
     document.getElementById('root')
   );

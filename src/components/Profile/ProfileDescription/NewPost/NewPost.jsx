@@ -7,20 +7,20 @@ const NewPost = (props) => {
 
 
 
-  let addPost = () => {
-    props.addPost(props.newPostText)
+  let  addPost = () => {
+    props.dispatch({type : 'ADD-POST'})
   }
 
-  let onTextareaChange = () =>{
+  let onPostTextChange = () =>{
     let text = newPostElement.current.value;
-    props.onPostTextChange(text)
+    props.dispatch({type : 'ON-POST-TEXT-CHANGE', inputText: text},)
   }
 
   return (
     <div className={`${styles.newPostBlock}`}>
       <div className={`${styles.newPostInputBlock}`}>
         <p className={`${styles.newPost}`}>New post</p>
-        <textarea onChange = {onTextareaChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
+        <textarea onChange = {onPostTextChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
         <button onClick={addPost} className={`${styles.newPostSend}`}>
           ADD POST
         </button>

@@ -147,34 +147,16 @@ let store = {
           }
      
      },
-     
+     _callSubscriber(){},
+
      getState(){
           return this._state
      },
-
-     _callSubscriber(){},
-     
-     addPost(){
-          let newPost = {
-               id: 2,
-               loginName: '@romankonopelko',
-               likes: '26',
-               coments: '1',
-               reposts: "1",
-               userAvatar: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-               postImg: "https://3dnews.ru/assets/external/illustrations/2020/01/20/1001842/01_result.jpg",
-               postText: this._state.profilePage.newPostText
-          };
-     
-          this._state.profilePage.posts.push(newPost)
-          this._state.profilePage.newPostText = ''
-          this._callSubscriber(this._state)
+     subscribe(observer){ 
+          this._callSubscriber = observer
      },
-     onPostTextChange(inputText){
 
-          this._state.profilePage.newPostText = inputText
-          this._callSubscriber(this._state)
-     },
+
 
      addMessage(){
           let newMessage = {
@@ -193,8 +175,45 @@ let store = {
           this._callSubscriber(this._state)
      },
 
-     subscribe(observer){ 
-          this._callSubscriber = observer
+     dispatch(action){
+          //POSTS
+          if(action.type === 'ADD-POST'){ 
+               let newPost = {
+                    id: 2,
+                    loginName: '@romankonopelko',
+                    likes: '26',
+                    coments: '1',
+                    reposts: "1",
+                    userAvatar: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
+                    postImg: "https://3dnews.ru/assets/external/illustrations/2020/01/20/1001842/01_result.jpg",
+                    postText: this._state.profilePage.newPostText
+               };
+          
+               this._state.profilePage.posts.push(newPost)
+               this._state.profilePage.newPostText = ''
+               this._callSubscriber(this._state)
+          }else if(action.type === 'ON-POST-TEXT-CHANGE'){
+               this._state.profilePage.newPostText = action.inputText
+               this._callSubscriber(this._state)
+          }
+          // ----
+
+          //MESSAGES
+          if(action.type === 'ADD-MESSAGE' ){
+               let newMessage = {
+                    id: 1,
+                    time: '11:44',
+                    chatMessage: this._state.messagesPage.newMessageText
+               };
+          
+               this._state.messagesPage.messages.push(newMessage)
+               this._state.messagesPage.newMessageText = ''
+               this._callSubscriber(this._state)
+          }else if(action.type === 'ON-MESSAGE-TEXT-CHANGE'){
+               this._state.messagesPage.newMessageText = action.inputText
+               this._callSubscriber(this._state)
+          }
+          // ----
      }
 }
 
