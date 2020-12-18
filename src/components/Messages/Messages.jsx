@@ -4,6 +4,7 @@ import Chat from './Chat/Chat'
 
 const Messages = (props) => {
 
+
   let dialogsElements = props.state.dialogs.map((d, i) => <Dialog key={i} name={d.name} id={d.id} avatar={d.avatar} />)
 
   return (

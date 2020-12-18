@@ -1,7 +1,7 @@
 import styles from './NewPost.module.css'
 import React from 'react'
 
-import {addPostActionCreator,updateAddPostActionCreator} from '../../../../redux/state'
+import {addPostActionCreator,updateAddPostActionCreator} from '../../../../redux/./profile-reducer'
 
 const NewPost = (props) => {
   let newPostElement = React.createRef();
