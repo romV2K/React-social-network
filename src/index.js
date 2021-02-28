@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store'
 import App from './App';
-import {Provider} from './storeContext';
+import {Provider} from "react-redux";
 
 
 export let _callSubscriber = (state) => {

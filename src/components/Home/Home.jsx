@@ -1,21 +1,16 @@
-import StoreContext from "../../storeContext";
-import Posts from "../Profile/Posts/Posts";
+
+// import Posts from "../Profile/Posts/Posts";
+import PostsContainer from "../Profile/Posts/PostsСontainer";
 import styles from "./Home.module.css"
 
 const Home = props => {
   return (
-    <StoreContext.Consumer>
-    {
-      (store)=>(
           <main >
             <div className={`${styles.container}`}>
-                 <Posts posts={store.getState().profilePage.posts}/>
+                 <PostsContainer />
             </div>
           </main>
         )
-      }
-    </StoreContext.Consumer>
-  );
 }
 
 export default Home;

@@ -1,22 +1,23 @@
 import Chat from './Chat'
-import React from 'react'
 import { addMessageActionCreator, updateAddMessageActionCreator } from '../../../redux/messages-reducer';
+import { connect } from 'react-redux';
 
-const ChatContainer = props => {
 
-  let addMessage = () =>
-  props.store.dispatch(addMessageActionCreator())
-
-  let onMessageTextChange = text =>
-  props.store.dispatch(updateAddMessageActionCreator(text))
-
-  return(
-      <Chat
-        onMessageTextChange={onMessageTextChange}
-        addMessage={addMessage} messages={props.store.getState().messagesPage.messages}
-        newMessageText={props.store.getState().messagesPage.newMessageText}
-      />
-    )
+let mapStoreToProps = state =>{
+  return{
+    messages: state.messagesPage.messages,
+    newMassageText: state.messagesPage.newMessageText,
+  }
 }
+let mapDispatchToProps = dispatch =>{
+  return{
+    onMessageTextChange:(text)=>
+      dispatch(updateAddMessageActionCreator(text)),
+    addMessage:()=>
+      dispatch(addMessageActionCreator()) 
+  }
+}
+
+const ChatContainer = connect(mapStoreToProps,mapDispatchToProps)(Chat)
 
 export default ChatContainer;

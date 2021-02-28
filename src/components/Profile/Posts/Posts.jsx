@@ -1,6 +1,7 @@
 import styles from './Posts.module.css';
 import Post from './Post/Post'
 
+
 const Posts = props => {
       let postsElements = props.posts.map((p, i) => <Post 
             key={i} 
@@ -19,5 +20,7 @@ const Posts = props => {
             </div>
       );
 }
+
+
 
 export default Posts;

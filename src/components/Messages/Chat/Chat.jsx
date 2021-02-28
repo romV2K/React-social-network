@@ -15,7 +15,6 @@ const Chat = props => {
     props.onMessageTextChange(text)
   }
 
-
   let chatElements = props.messages
       .map((c, i) => <ChatMessage key={i} text={c.chatMessage} time={c.time} />)//chat data maping
 
