@@ -3,7 +3,7 @@ body{
   background-size: 400% 400%;
   font-family: 'Poppins';
   animation: gradientAnim 30s ease infinite;
-
+  margin: 0;
 }
 textarea:focus,input:focus,button:focus{
   outline: none;

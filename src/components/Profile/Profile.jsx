@@ -1,15 +1,22 @@
 import ProfileDescription from "../Profile/ProfileDescription/ProfileDescription";
 import Posts from "../Profile/Posts/Posts";
 import styles from "./Profile.module.css"
+import StoreContext from "../../storeContext";
 
-const Profile = (props) => {
+const Profile = props => {
   return (
-    <main className={`${styles.profileMainContainer}`}>
-      <ProfileDescription dispatch={props.dispatch} newPostText = {props.state.newPostText}/>
-      <div className={`${styles.container}`}>
-        <Posts posts={props.state.posts} />
-      </div>
-    </main>
+    <StoreContext.Consumer>
+    {
+      (store)=>(
+          <main className={`${styles.profileMainContainer}`}>
+            <ProfileDescription />
+            <div className={`${styles.container}`}>
+                 <Posts posts={store.getState().profilePage.posts}/>
+            </div>
+          </main>
+        )
+      }
+    </StoreContext.Consumer>
   );
 }
 

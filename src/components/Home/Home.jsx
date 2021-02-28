@@ -1,13 +1,20 @@
+import StoreContext from "../../storeContext";
 import Posts from "../Profile/Posts/Posts";
 import styles from "./Home.module.css"
 
-const Home = (props) => {
+const Home = props => {
   return (
-    <main>
-      <div className={`${styles.container}`}>
-      <Posts posts={props.state.posts} />
-      </div>
-    </main>
+    <StoreContext.Consumer>
+    {
+      (store)=>(
+          <main >
+            <div className={`${styles.container}`}>
+                 <Posts posts={store.getState().profilePage.posts}/>
+            </div>
+          </main>
+        )
+      }
+    </StoreContext.Consumer>
   );
 }
 

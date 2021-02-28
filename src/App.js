@@ -12,18 +12,18 @@ import Settings from './components/Settings/Settings';
 
 import { Route, BrowserRouter, Redirect } from 'react-router-dom'
 
-const App = (props) => {
+const App = props => {
   return (
     <BrowserRouter>
         <Header/>
         <Nav/>
           <Redirect from='/' to='/Home'/>
-          <Route path='/Home' render={() => <Home state={props.state.profilePage} dispatch={props.dispatch} />} />
-          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} dispatch={props.dispatch} /> }/>
-          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} dispatch={props.dispatch} />} />
-          <Route path='/News' render={() =><News/>} />
-          <Route path='/Music' render={() =><Music/>} />
-          <Route path='/Settings' render={() =><Settings/>} />
+          <Route path='/Home' render={() => <Home/>} />
+          <Route path='/Profile' render={() => <Profile/> }/>
+          <Route path='/Messages' render={() => <Messages/>}/>
+          <Route path='/News' render={() =><News/> }/>
+          <Route path='/Music' render={() =><Music/> }/>
+          <Route path='/Settings' render={() =><Settings/> } />
     </BrowserRouter>
   );
 }

@@ -1,18 +1,19 @@
-import styles from './NewPost.module.css'
-import React from 'react'
+import React from 'react';
+// import NewPostContainer from './NewPostContainer'
+import styles from './NewPost.module.css';
 
-import {addPostActionCreator,updateAddPostActionCreator} from '../../../../redux/./profile-reducer'
 
-const NewPost = (props) => {
+const NewPost = props => {
+
   let newPostElement = React.createRef();
 
-  let  addPost = () => {
-    props.dispatch(addPostActionCreator())
+  let addPost = () => {
+    props.addPost()
   }
 
   let onPostTextChange = () =>{
     let text = newPostElement.current.value;
-    props.dispatch(updateAddPostActionCreator(text))
+    props.onPostTextChange(text);
   }
 
   return (
@@ -22,7 +23,7 @@ const NewPost = (props) => {
         <textarea onChange = {onPostTextChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
         <button onClick={addPost} className={`${styles.newPostSend}`}>
           ADD POST
-        </button>
+        </button> 
       </div>
     </div>
   )

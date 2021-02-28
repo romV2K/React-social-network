@@ -4,13 +4,13 @@ import styles from './Description.module.css'
 
 
 
-const Miscellaneous = (props) => {
+const Miscellaneous = props => {
   return(
       <p className="">{props.otherDesc}</p>
   )
 
 } 
-const Description = (props) => {
+const Description = props => {
   return (
     <div className={`${styles.avatarProfileDerscription}`}>
       <div className={`${styles.avatarDescription}`}>

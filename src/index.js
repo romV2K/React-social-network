@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store'
-// import store from './redux/store'
 import App from './App';
+import {Provider} from './storeContext';
 
 
 export let _callSubscriber = (state) => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} dispatch={store.dispatch.bind(store)} />
+      <Provider store={store}>
+        <App/>
+      </Provider>
     </React.StrictMode>,
     document.getElementById('root')
   );

@@ -5,7 +5,7 @@ let initialStore = {
 
 }
 
-const navbarReducer = (state=initialStore,action) =>{
+const navbarReducer = (state = initialStore,action) =>{
      
      return state;
 }
