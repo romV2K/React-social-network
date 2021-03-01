@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 let mapStoreToProps = state =>{
   return{
     messages: state.messagesPage.messages,
-    newMassageText: state.messagesPage.newMessageText,
+    newMessageText: state.messagesPage.newMessageText,
   }
 }
 let mapDispatchToProps = dispatch =>{

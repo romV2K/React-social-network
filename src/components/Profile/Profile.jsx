@@ -7,7 +7,7 @@ const Profile = props => {
           <main className={`${styles.profileMainContainer}`}>
             <ProfileDescription />
             <div className={`${styles.container}`}>
-                 <PostsContainer />
+              <PostsContainer />
             </div>
           </main>
         )

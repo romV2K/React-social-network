@@ -11,7 +11,7 @@ import Settings from './components/Settings/Settings';
 
 
 import { Route, BrowserRouter, Redirect } from 'react-router-dom'
-import MessagesContainer from './components/Messages/Messages copy';
+import MessagesContainer from './components/Messages/MessagesContainer';
 
 const App = props => {
   return (

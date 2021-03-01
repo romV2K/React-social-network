@@ -1,5 +1,4 @@
 import React from 'react';
-// import NewPostContainer from './NewPostContainer'
 import styles from './NewPost.module.css';
 
 
@@ -22,7 +21,7 @@ const NewPost = props => {
         <p className={`${styles.newPost}`}>New post</p>
         <textarea onChange = {onPostTextChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
         <button onClick={addPost} className={`${styles.newPostSend}`}>
-          ADD POST
+          Add post
         </button> 
       </div>
     </div>
