@@ -1,7 +1,6 @@
 const ADD_POST = 'ADD-POST',
      ON_POST_TEXT_CHANGE = 'ON-POST-TEXT-CHANGE';
 
-
 let intialStore = {
      posts: [
           // {
@@ -29,14 +28,11 @@ let intialStore = {
 }
 
 const profileReducer = (state = intialStore, action) => {
-
+     let stateCopy;
      switch (action.type) {
-          case ADD_POST: {
-               let stateCopy = {
-                    ...state,
-                    posts: [...state.posts]
-               }
+          case ADD_POST: 
 
+               let newPostText = state.newPostText
                let newPost = {
                     id: 2,
                     loginName: '@romankonopelko',
@@ -45,25 +41,22 @@ const profileReducer = (state = intialStore, action) => {
                     reposts: "1",
                     userAvatar: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
                     postImg: "https://3dnews.ru/assets/external/illustrations/2020/01/20/1001842/01_result.jpg",
-                    postText: stateCopy.newPostText
+                    postText: newPostText
                };
 
-               stateCopy.posts.push(newPost);
-               stateCopy.newPostText = '';
-
-               return stateCopy;
-          }
-
-          case ON_POST_TEXT_CHANGE:{
-               let stateCopy = {
+               stateCopy = {
                     ...state,
-                    posts: [...state.posts]
-               };
-
-               stateCopy.newPostText = action.inputText;
-
+                    newPostText: '',
+                    posts: [...state.posts,newPost]
+               }
                return stateCopy;
-          }
+
+          case ON_POST_TEXT_CHANGE:
+               stateCopy = {
+                    ...state,
+                    newPostText: action.inputText
+               };
+               return stateCopy;
           default:
                return state
      }

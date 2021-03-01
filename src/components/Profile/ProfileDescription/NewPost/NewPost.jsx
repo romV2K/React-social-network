@@ -5,6 +5,7 @@ import styles from './NewPost.module.css';
 const NewPost = props => {
 
   let newPostElement = React.createRef();
+  let postButton = React.createRef();
 
   let addPost = () => {
     props.addPost()
@@ -20,7 +21,7 @@ const NewPost = props => {
       <div className={`${styles.newPostInputBlock}`}>
         <p className={`${styles.newPost}`}>New post</p>
         <textarea onChange = {onPostTextChange} ref={newPostElement} value={props.newPostText} className={`${styles.newPostInput}`}></textarea>
-        <button onClick={addPost} className={`${styles.newPostSend}`}>
+        <button ref={postButton} onClick={addPost} className={`${styles.newPostSend}`}>
           Add post
         </button> 
       </div>
