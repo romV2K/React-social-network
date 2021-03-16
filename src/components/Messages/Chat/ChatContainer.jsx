@@ -1,5 +1,5 @@
 import Chat from './Chat'
-import { addMessageActionCreator, updateAddMessageActionCreator } from '../../../redux/messages-reducer';
+import { addMessageAC, updateAddMessageAC } from '../../../redux/messages-reducer';
 import { connect } from 'react-redux';
 
 
@@ -12,9 +12,9 @@ let mapStoreToProps = state =>{
 let mapDispatchToProps = dispatch =>{
   return{
     onMessageTextChange:(text)=>
-      dispatch(updateAddMessageActionCreator(text)),
+      dispatch(updateAddMessageAC(text)),
     addMessage:()=>
-      dispatch(addMessageActionCreator()) 
+      dispatch(addMessageAC()) 
   }
 }
 

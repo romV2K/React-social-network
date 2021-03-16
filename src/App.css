@@ -39,12 +39,12 @@ a:hover{
   animation: 5s linear 0s normal none infinite running logoRotation;
   -webkit-animation: 5s linear 0s normal none infinite running logoRotation;
 }
-
+/* 
 @keyframes gradientAnim {
   0%{background-position:0% 91%}
   50%{background-position:100% 10%}
   100%{background-position:0% 91%}
-}
+} */
 /* ______ */
 
 /* MEDIA QUERIES */

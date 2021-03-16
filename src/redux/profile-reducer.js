@@ -28,42 +28,37 @@ let intialStore = {
 }
 
 const profileReducer = (state = intialStore, action) => {
-     let stateCopy;
      switch (action.type) {
           case ADD_POST: 
-
-               let newPostText = state.newPostText
-               let newPost = {
-                    id: 2,
-                    loginName: '@romankonopelko',
-                    likes: '26',
-                    coments: '1',
-                    reposts: "1",
-                    userAvatar: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
-                    postImg: "https://3dnews.ru/assets/external/illustrations/2020/01/20/1001842/01_result.jpg",
-                    postText: newPostText
-               };
-
-               stateCopy = {
+               return {
                     ...state,
                     newPostText: '',
-                    posts: [...state.posts,newPost]
+                    posts: [...state.posts,
+                         {
+                         id: 2,
+                         loginName: '@romankonopelko',
+                         likes: '26',
+                         coments: '1',
+                         reposts: "1",
+                         userAvatar: "https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png",
+                         postImg: "https://3dnews.ru/assets/external/illustrations/2020/01/20/1001842/01_result.jpg",
+                         postText: state.newPostText
+                         }
+                    ]
                }
-               return stateCopy;
 
           case ON_POST_TEXT_CHANGE:
-               stateCopy = {
+               return{
                     ...state,
                     newPostText: action.inputText
                };
-               return stateCopy;
           default:
                return state
      }
 
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const updateAddPostActionCreator = (text) => ({ type: ON_POST_TEXT_CHANGE, inputText: text })
+export const addPostAC = () => ({ type: ADD_POST })
+export const updateAddPostAC = (text) => ({ type: ON_POST_TEXT_CHANGE, inputText: text })
 
 export default profileReducer
