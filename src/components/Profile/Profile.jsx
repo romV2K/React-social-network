@@ -5,7 +5,7 @@ import PostsContainer from './Posts/PostsСontainer'
 const Profile = props => {
   return (
           <main className={`${styles.profileMainContainer}`}>
-            <ProfileDescription />
+            <ProfileDescription profile={props.profile}/>
             <div className={`${styles.container}`}>
               <PostsContainer />
             </div>
