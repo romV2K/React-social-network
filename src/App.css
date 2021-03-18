@@ -38,16 +38,47 @@ a:hover{
 }
 
 /* ANIMATIONS */
-.logoRotation{
+/* .logoRotation{
   animation: 5s linear 0s normal none infinite running logoRotation;
   -webkit-animation: 5s linear 0s normal none infinite running logoRotation;
-}
+} */
 /* 
 @keyframes gradientAnim {
   0%{background-position:0% 91%}
   50%{background-position:100% 10%}
   100%{background-position:0% 91%}
 } */
+
+.show{
+  animation: show 0.2s;
+  -webkit-animation: show 0.2s;
+ }
+ @keyframes show{
+   0%{
+     opacity: 0;
+   }
+   100%{
+     opacity: 1;
+   }
+ }
+.hide{
+  animation: hide 0.2s;
+  -webkit-animation: hide 0.2s;
+}
+ @keyframes hide{
+   0%{
+     opacity: 1;
+   }
+   100%{
+     opacity: 0;
+   }
+ }
+.hideAndNone{
+  display: none;
+  animation: hide 0.1s;
+  -webkit-animation: hide 0.1s;
+}
+
 /* ______ */
 
 /* MEDIA QUERIES */

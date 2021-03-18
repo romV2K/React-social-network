@@ -1,6 +1,6 @@
 import './App.css';
 import Nav from "./components/Navbar/Nav";
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Home from './components/Home/Home';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -16,16 +16,16 @@ import { Route, BrowserRouter, Redirect } from 'react-router-dom'
 const App = props => {
   return (
     <BrowserRouter>
-        <Header/>
-        <Nav/>
-          <Redirect from='/' to='/Home'/>
-          <Route path='/Home' render={() => <Home/>} />
-          <Route path='/Profile' render={() => <ProfileContainer/> }/>
-          <Route path='/Messages' render={() => <MessagesContainer/>}/>
-          <Route path='/Users' render={() => <UsersContainer/> } />
-          <Route path='/News' render={() =><News/> }/>
-          <Route path='/Music' render={() =><Music/> }/>
-          <Route path='/Settings' render={() =><Settings/> } />
+          <HeaderContainer/>
+          <Nav/>
+          <Redirect from='/' to='/home'/>
+          <Route path='/home' render={() => <Home/>} />
+          <Route path='/profile/:userId?' render={() => <ProfileContainer/> }/>
+          <Route path='/messages' render={() => <MessagesContainer/>}/>
+          <Route path='/users' render={() => <UsersContainer/> } />
+          <Route path='/news' render={() =><News/> }/>
+          <Route path='/music' render={() =><Music/> }/>
+          <Route path='/settings' render={() =><Settings/> } />
     </BrowserRouter>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./Users.module.css"
+import '../../App.css'
 import userIcon from '../../assets/images/userIcon.svg'
 import { NavLink } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
@@ -27,7 +28,7 @@ let Users = (props) => {
           activeClassName={styles.selected}
         />
       {props.isFetching ? <Preloader/> : null}
-      <div className={props.isFetching ? styles.hide : `${styles.users} ${styles.show}`}>
+      <div className={props.isFetching ? 'hideAndNone' : `${styles.users} show`}>
         {
           props.users.map(u =>
             <div className={styles.user} key={u.id}>

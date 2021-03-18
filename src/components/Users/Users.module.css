@@ -5,9 +5,6 @@
      align-items: center;
 }
 
-.hide{
-  display: none
-}
 .users{
   width: 50%;
   display: flex;
@@ -131,15 +128,3 @@
   -o-transition: 0.3s;
 }
 
-.show{
- animation: show 0.2s;
- -webkit-animation: show 0.2s;
-}
-@keyframes show{
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}

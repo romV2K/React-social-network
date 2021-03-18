@@ -4,7 +4,6 @@ import ChatContainer from './Chat/ChatContainer';
 
 
 const Messages = (props) => {
-        // debugger
         let dialogsElements = props.dialogs.map((d, i) => <Dialog key={i} name={d.name} id={d.id} avatar={d.avatar} />)
         return (
           <main className={`${styles.dialogsMessagesContainer}`}>

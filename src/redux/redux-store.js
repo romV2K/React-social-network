@@ -3,12 +3,14 @@ import profileReducer from './profile-reducer'
 import messagesReducer from './messages-reducer'
 import usersReducer from './users-reducer'
 import navbarReducer from './navbar-reducer'
+import authReducer from './auth-reducer'
 
 let reducers = combineReducers({
      profilePage: profileReducer,
      messagesPage: messagesReducer,
      usersPage: usersReducer,
-     navbar: navbarReducer
+     navbar: navbarReducer,
+     auth: authReducer
 })
 
 
