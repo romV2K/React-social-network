@@ -1,6 +1,6 @@
 import styles from './Post.module.css';
 
-const Post = (props) => {
+const Post = props => {
   return (
       <div className={`${styles.post} ${styles.postPadding}`}>
         <div className={`${styles.avatarAndLoginName}`}>

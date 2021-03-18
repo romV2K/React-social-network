@@ -1,10 +1,13 @@
 
+.description{
+  margin-left: 2%;
+}
 .description p{
   margin-bottom: 10px;
 }
 .avatarContainer{
-  width: 100px;
-  height: 100px;
+  width: 25%;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
   -webkit-border-radius: 50%;
@@ -22,13 +25,20 @@
   border-radius: 25px 25px 0px 0px;
 }
 .avatarDescription{
-  width: 440px;
+    display: flex;
+}
+.nameAndStatus{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.nameAndStatus{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 .userName{
-     font-size: 1.5rem;
+  margin-bottom: 0px;
 }
 .newPost{
   font-size: 1.5rem;
@@ -64,3 +74,22 @@
   color: white;
   background-color: #4339c2;
 }
+.lookingForAJobBlockChecked{
+  border-radius: 5px;
+  background: #b3ffb3;
+  padding: 10px;
+}
+.lookingForAJobBlockCenceled{
+  border-radius: 5px;
+  background: #f8b654;
+  padding: 10px;
+}
+/* .lookingForAJobBlock{
+  display: flex;
+} */
+.lookingForAJobIndicator{
+  width: 16px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+

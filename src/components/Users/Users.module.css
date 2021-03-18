@@ -1,0 +1,130 @@
+.usersMainContainer{
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+}
+
+.users{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.user{
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  margin: 8px 0px 8px 0px;
+  height: 100px;
+}
+.avatarAndFollowButton{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+  margin-left: 10px;
+}
+.followButton{
+  border: 0px;
+  border-radius: 5px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.followButton:hover{
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.followButton:active{
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  background: #c5a1e6f7;
+  color: white;
+}
+
+.avatarContainer{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.avatar{
+  width: 100%;
+  height: auto;
+}
+
+.nameStatusLocation{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
+}
+
+.pagination {
+  list-style-type: none;
+  display: flex;
+  background: white;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.pagination li {
+  cursor: pointer;
+}
+.prevButton{
+  width: 23px;
+  border-radius: 25px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  margin-right: 3px;
+}
+.nextButton{
+  width: 23px;
+  border-radius: 25px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  margin-left: 3px;
+}
+.prevButton a, .nextButton a{
+  padding: 0px;
+}
+
+.selected{
+  background: black;
+  color: white;
+  border-radius: 4px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+

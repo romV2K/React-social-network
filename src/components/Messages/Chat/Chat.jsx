@@ -1,23 +1,22 @@
 import styles from './Chat.module.css';
 import ChatMessage from './ChatMessage/ChatMessage';
 import React from 'react'
-import { addMessageActionCreator, updateAddMessageActionCreator } from '../../../redux/state';
 
-const Chat = (props) => {
+const Chat = props => {
 
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    props.dispatch(addMessageActionCreator())
+    props.addMessage()
   }
 
   let onMessageTextChange = () => {
     let text = newMessageElement.current.value
-    props.dispatch(updateAddMessageActionCreator(text))
+    props.onMessageTextChange(text)
   }
 
-
-  let chatElements = props.messages.map((c, i) => <ChatMessage key={i} text={c.chatMessage} time={c.time} />)//chat data maping
+  let chatElements = props.messages
+      .map((c, i) => <ChatMessage key={i} text={c.chatMessage} time={c.time} />)//chat data maping
 
   return (
     <div className={`${styles.messagesContainer}`}>

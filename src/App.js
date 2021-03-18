@@ -1,32 +1,31 @@
 import './App.css';
 import Nav from "./components/Navbar/Nav";
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Home from './components/Home/Home';
-import Profile from './components/Profile/Profile'
-import Messages from './components/Messages/Messages';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import UsersContainer from './components/Users/UsersContainer';
+import MessagesContainer from './components/Messages/MessagesContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 
 
 import { Route, BrowserRouter, Redirect } from 'react-router-dom'
 
-const App = (props) => {
-  
+const App = props => {
   return (
     <BrowserRouter>
-        <Header/>
-        <Nav/>
-
-          <Redirect from='/' to='/Home'/>
-          <Route path='/Home' render={() => <Home state={props.state.profilePage} dispatch={props.dispatch} />} />
-          <Route path='/Profile' render={ () => <Profile state={props.state.profilePage} dispatch={props.dispatch} /> }/>
-          <Route path='/Messages' render={() => <Messages state={props.state.messagesPage} dispatch={props.dispatch} />} />
-          <Route path='/News' render={() =><News/>} />
-          <Route path='/Music' render={() =><Music/>} />
-          <Route path='/Settings' render={() =><Settings/>} />
-
+          <HeaderContainer/>
+          <Nav/>
+          <Redirect from='/' to='/home'/>
+          <Route path='/home' render={() => <Home/>} />
+          <Route path='/profile/:userId?' render={() => <ProfileContainer/> }/>
+          <Route path='/messages' render={() => <MessagesContainer/>}/>
+          <Route path='/users' render={() => <UsersContainer/> } />
+          <Route path='/news' render={() =><News/> }/>
+          <Route path='/music' render={() =><Music/> }/>
+          <Route path='/settings' render={() =><Settings/> } />
     </BrowserRouter>
   );
 }

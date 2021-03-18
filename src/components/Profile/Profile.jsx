@@ -1,16 +1,16 @@
 import ProfileDescription from "../Profile/ProfileDescription/ProfileDescription";
-import Posts from "../Profile/Posts/Posts";
 import styles from "./Profile.module.css"
+import PostsContainer from './Posts/PostsСontainer'
 
-const Profile = (props) => {
+const Profile = props => {
   return (
-    <main className={`${styles.profileMainContainer}`}>
-      <ProfileDescription dispatch={props.dispatch} newPostText = {props.state.newPostText}/>
-      <div className={`${styles.container}`}>
-        <Posts posts={props.state.posts} />
-      </div>
-    </main>
-  );
+          <main className={`${styles.profileMainContainer}`}>
+            <ProfileDescription profile={props.profile}/>
+            <div className={`${styles.container}`}>
+              <PostsContainer />
+            </div>
+          </main>
+        )
 }
 
 export default Profile;
