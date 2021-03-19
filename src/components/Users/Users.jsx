@@ -5,7 +5,7 @@ import userIcon from '../../assets/images/userIcon.svg'
 import { NavLink } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Preloader from '../../assets/preloader/Preloader'
-import * as axios from 'axios'
+import { followAPI } from '../../api/api';
 
 
 let Users = (props) => {
@@ -42,29 +42,14 @@ let Users = (props) => {
                 </NavLink>
                 <div>
                   {u.followed
-                    ? <button onClick={() => {
-                      axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                        headers: {
-                          'API-KEY': 'ceb868d5-e092-40d3-a57e-f46c94cb7815'
-                        },
-                        withCredentials: true
-                      })
-                        .then(response => {
-                          if (response.data.resultCode === 0)
-                            props.unfollow(u.id)
-                        })
+                    ? <button onClick={() => {//unfollow
+                      followAPI.unfollow(u.id)
+                        .then(data => data.resultCode === 0 ? props.unfollow(u.id) : null)
                     }} className={styles.followButton}>unfollow</button>
-                    : <button onClick={() => {
-                      axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                        headers: {
-                          'API-KEY': 'ceb868d5-e092-40d3-a57e-f46c94cb7815'
-                        },
-                        withCredentials: true
-                      })
-                        .then(response => {
-                          if (response.data.resultCode === 0)
-                            props.follow(u.id)
-                        })
+
+                    : <button onClick={() => {//follow
+                      followAPI.follow(u.id)
+                        .then(data=> data.resultCode === 0 ? props.follow(u.id) : null)
                     }} className={styles.followButton}>follow</button>
                   }
                 </div>
