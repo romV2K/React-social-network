@@ -10,8 +10,8 @@ import { followAPI } from '../../api/api';
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-  
 
+  // debugger
   return (
     <main className={styles.usersMainContainer}>
       <ReactPaginate
@@ -42,14 +42,25 @@ let Users = (props) => {
                 </NavLink>
                 <div>
                   {u.followed
-                    ? <button onClick={() => {//unfollow
+                    ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {//unfollow
+                      props.setIsFollowing(true,u.id)
                       followAPI.unfollow(u.id)
-                        .then(data => data.resultCode === 0 ? props.unfollow(u.id) : null)
-                    }} className={styles.followButton}>unfollow</button>
+                        .then(data => {
+                          if (data.resultCode === 0)
+                            props.unfollow(u.id)
+                          props.setIsFollowing(false,u.id)
+                        })
+                    }}
+                    className={styles.followButton}>unfollow</button>
 
-                    : <button onClick={() => {//follow
+                    : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {//follow
+                      props.setIsFollowing(true,u.id)
                       followAPI.follow(u.id)
-                        .then(data=> data.resultCode === 0 ? props.follow(u.id) : null)
+                        .then(data => {
+                          if (data.resultCode === 0)
+                            props.follow(u.id)
+                          props.setIsFollowing(false,u.id)
+                        })
                     }} className={styles.followButton}>follow</button>
                   }
                 </div>

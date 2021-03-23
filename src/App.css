@@ -1,3 +1,6 @@
+html{
+  overflow-y: scroll;
+}
 body{
   background: linear-gradient(260deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
   background-size: 400% 400%;

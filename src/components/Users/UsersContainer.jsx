@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from "react-redux";
 import Users from './Users'
-import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setIsFetching } from '../../redux/users-reducer'
-import { getUsers, userAPI } from '../../api/api'
+import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setIsFetching,setIsFollowing } from '../../redux/users-reducer'
+import {userAPI,} from '../../api/api'
 
 class UsersContainer extends React.Component {
 
@@ -20,7 +20,7 @@ class UsersContainer extends React.Component {
     let selected = pageObj.selected + 1
     this.props.setCurrentPage(selected)
     this.props.setIsFetching(true)
-
+    
     userAPI.getUsers(selected, this.props.pageSize)
       .then(data => {
         this.props.setIsFetching(false)
@@ -30,15 +30,7 @@ class UsersContainer extends React.Component {
 
   render() {
     return (
-      <Users users={this.props.users}
-        follow={this.props.follow}
-        unfollow={this.props.unfollow}
-        totalUsersCount={this.props.totalUsersCount}
-        pageSize={this.props.pageSize}
-        currentPage={this.props.currentPage}
-        onPageChanged={this.onPageChanged}
-        isFetching={this.props.isFetching}
-      />
+      <Users {...this.props} onPageChanged={this.onPageChanged}/>
     )
   }
 }
@@ -50,9 +42,10 @@ let mapStateToProps = (state) => {
     pageSize: state.usersPage.pageSize,
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
-    isFetching: state.usersPage.isFetching
+    isFetching: state.usersPage.isFetching,
+    followingInProgress: state.usersPage.followingInProgress
   }
 }
 
 export default connect(mapStateToProps,
-  { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, setIsFetching })(UsersContainer);
+  { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, setIsFetching, setIsFollowing })(UsersContainer);
