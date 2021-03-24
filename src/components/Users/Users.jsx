@@ -5,7 +5,6 @@ import userIcon from '../../assets/images/userIcon.svg'
 import { NavLink } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import Preloader from '../../assets/preloader/Preloader'
-import { followAPI } from '../../api/api';
 
 
 let Users = (props) => {
@@ -42,26 +41,13 @@ let Users = (props) => {
                 </NavLink>
                 <div>
                   {u.followed
-                    ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {//unfollow
-                      props.setIsFollowing(true,u.id)
-                      followAPI.unfollow(u.id)
-                        .then(data => {
-                          if (data.resultCode === 0)
-                            props.unfollow(u.id)
-                          props.setIsFollowing(false,u.id)
-                        })
-                    }}
-                    className={styles.followButton}>unfollow</button>
-
-                    : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {//follow
-                      props.setIsFollowing(true,u.id)
-                      followAPI.follow(u.id)
-                        .then(data => {
-                          if (data.resultCode === 0)
-                            props.follow(u.id)
-                          props.setIsFollowing(false,u.id)
-                        })
-                    }} className={styles.followButton}>follow</button>
+                    ? <button disabled={props.followingInProgress.some(id => id === u.id)} 
+                      onClick={() => {props.unfollow(u.id)}} 
+                      className={styles.followButton}>unfollow</button>
+                      
+                    : <button disabled={props.followingInProgress.some(id => id === u.id)} 
+                      onClick={() => {props.follow(u.id)}}
+                      className={styles.followButton}>follow</button>
                   }
                 </div>
               </span>

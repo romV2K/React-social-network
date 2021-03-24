@@ -22,11 +22,17 @@ export const
                     .then(response => response.data))
      },
 
+     authAPI = {
+          getMe: (me) => (
+               instance.get(`auth/${me}`)
+                    .then(response => response.data))
+          
+     },
+
      followAPI = {
           follow: (userId) => (
                instance.post(`follow/${userId}`)
-                    .then(response => response.data))
-          ,
+                    .then(response => response.data)),
           unfollow: (userId) => (
                instance.delete(`follow/${userId}`)
                     .then(response => response.data))

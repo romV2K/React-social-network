@@ -1,31 +1,16 @@
 import React from 'react'
 import { connect } from "react-redux";
 import Users from './Users'
-import { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, setIsFetching,setIsFollowing } from '../../redux/users-reducer'
-import {userAPI,} from '../../api/api'
+import { followSucces, unfollowSucces, setUsers, setCurrentPage, setIsFollowing, getUsers, follow, unfollow } from '../../redux/users-reducer'
 
 class UsersContainer extends React.Component {
-
   componentDidMount() {
-    this.props.setIsFetching(true)
-    userAPI.getUsers(this.props.currentPage, this.props.pageSize)
-      .then(data => {
-        this.props.setIsFetching(false)
-        this.props.setUsers(data.items)
-        this.props.setTotalUsersCount(data.totalCount)
-      })
+    this.props.getUsers(this.props.currentPage, this.props.pageSize)
   }
 
   onPageChanged = (pageObj) => {
     let selected = pageObj.selected + 1
-    this.props.setCurrentPage(selected)
-    this.props.setIsFetching(true)
-    
-    userAPI.getUsers(selected, this.props.pageSize)
-      .then(data => {
-        this.props.setIsFetching(false)
-        this.props.setUsers(data.items)
-      })
+    this.props.getUsers(selected, this.props.pageSize)
   }
 
   render() {
@@ -48,4 +33,5 @@ let mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps,
-  { follow, unfollow, setUsers, setTotalUsersCount, setCurrentPage, setIsFetching, setIsFollowing })(UsersContainer);
+  { followSucces, unfollowSucces, setUsers,
+    setCurrentPage,setIsFollowing, getUsers, follow, unfollow})(UsersContainer);

@@ -37,6 +37,12 @@ const authReducer = (state = intialStore, action) => {
 
 }
 
+export const getMe = () => {
+     return dispatch =>{
+          
+     }
+}
+
 
 export const setUserData = (id,login,email)=>({type: SET_USER_DATA, data:{id,login,email}})
 export const setProfilePhoto = (userIcon)=>({type: SET_PROFILE_PHOTO, userIcon})

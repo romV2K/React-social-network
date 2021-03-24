@@ -1,3 +1,5 @@
+import { profileAPI } from "../api/api";
+
 const ADD_POST = 'ADD-POST',
      ON_POST_TEXT_CHANGE = 'ON-POST-TEXT-CHANGE',
      SET_USER_PROFILE = 'SET_USER_PROFILE',
@@ -50,10 +52,21 @@ const profileReducer = (state = intialStore, action) => {
 
 }
 
+export const getProfile = (userId) => {
+     return dispatch => {
+          dispatch(setIsFetching(true))
+          profileAPI.getProfile(userId)
+            .then(data => {
+              dispatch(setIsFetching(false))
+              dispatch(setUserProfile(data))
+            })
+     }
+}
+
 export const addPostAC = () => ({ type: ADD_POST })
 export const updateAddPostAC = (text) => ({ type: ON_POST_TEXT_CHANGE, inputText: text })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile })
-export const setIsFetching = (isFetching)=>({type: TOGGLE_IS_FETCHING, isFetching})
+export const setIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 
 
 export default profileReducer
