@@ -44,8 +44,8 @@ const messagesReducer = (state = initialState, action) => {
      }
 }
 
-export const addMessageAC = () => ({ type: ADD_MESSAGE })
-export const updateAddMessageAC = (text) => ({ type: ON_MESSAGE_TEXT_CHANGE, inputText: text })
+export const addMessage = () => ({ type: ADD_MESSAGE })
+export const updateAddMessage = (text) => ({ type: ON_MESSAGE_TEXT_CHANGE, inputText: text })
 
 
 export default messagesReducer

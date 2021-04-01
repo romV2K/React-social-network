@@ -3,13 +3,14 @@ import styles from './Description.module.css'
 import checked from '../../../../assets/images/checked.svg'
 import cancel from '../../../../assets/images/cancel.svg'
 import userIcon from '../../../../assets/images/userIcon.svg'
+import ProfileStatus from './ProfileStatus'
 
 
 const Description = props => {
   if (!props.profile) {
     return <PreloaderBlack />
   }
-
+  // debugger
   let contacts = Object.entries(props.profile.contacts)
     .map((c, i) => !c[1] ? null : <p key={i}> {c[0]}: <a href={c[1]}> {c[1]}</a></p>)
 
@@ -22,7 +23,8 @@ const Description = props => {
         <div className={`${styles.description}`}>
         <div className={styles.nameAndStatus}>
           <h2 className={`${styles.userName}`}>{props.profile.fullName}</h2>
-          <span>{props.profile.aboutMe}</span>
+          {/* <span>{props.profile.aboutMe}</span> */}
+          <ProfileStatus status = {props.status} updateStatus={props.updateStatus} />
         </div>
           <div className={props.profile.lookingForAJob ? styles.lookingForAJobBlockChecked : styles.lookingForAJobBlockCenceled}>
             <div style={{display: 'flex', alignItems: 'center'}}>

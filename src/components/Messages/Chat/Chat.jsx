@@ -12,7 +12,7 @@ const Chat = props => {
 
   let onMessageTextChange = () => {
     let text = newMessageElement.current.value
-    props.onMessageTextChange(text)
+    props.updateAddMessage(text)
   }
 
   let chatElements = props.messages

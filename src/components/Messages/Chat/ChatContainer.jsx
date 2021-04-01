@@ -1,7 +1,14 @@
+import React from 'react';
 import Chat from './Chat'
-import { addMessageAC, updateAddMessageAC } from '../../../redux/messages-reducer';
+import { addMessage, updateAddMessage } from '../../../redux/messages-reducer';
 import { connect } from 'react-redux';
 
+class ChatContainer extends React.Component{
+
+  render(){
+    return <Chat {...this.props}/>
+  }
+}
 
 let mapStoreToProps = state =>{
   return{
@@ -9,15 +16,6 @@ let mapStoreToProps = state =>{
     newMessageText: state.messagesPage.newMessageText,
   }
 }
-let mapDispatchToProps = dispatch =>{
-  return{
-    onMessageTextChange:(text)=>
-      dispatch(updateAddMessageAC(text)),
-    addMessage:()=>
-      dispatch(addMessageAC()) 
-  }
-}
 
-const ChatContainer = connect(mapStoreToProps,mapDispatchToProps)(Chat)
+export default connect(mapStoreToProps,{updateAddMessage, addMessage})(ChatContainer)
 
-export default ChatContainer;

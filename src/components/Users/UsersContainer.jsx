@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import Users from './Users'
 import { followSucces, unfollowSucces, setUsers, setCurrentPage, setIsFollowing, getUsers, follow, unfollow } from '../../redux/users-reducer'
+import { compose } from 'redux';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -32,6 +33,6 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps,
+export default compose(connect(mapStateToProps,
   { followSucces, unfollowSucces, setUsers,
-    setCurrentPage,setIsFollowing, getUsers, follow, unfollow})(UsersContainer);
+    setCurrentPage,setIsFollowing, getUsers, follow, unfollow}))(UsersContainer);

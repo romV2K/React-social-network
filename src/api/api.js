@@ -15,20 +15,33 @@ export const
                instance.get(`users?page=${currentPage}&count=${pageSize}`)
                     .then(response => response.data))
      },
-
      profileAPI = {
           getProfile: (userId) => (
                instance.get(`profile/${userId}`)
+                    .then(response => response.data)),
+          getStatus: (userId) => (
+               instance.get(`/profile/status/${userId}`)
+                    .then(response => response.data)),
+          updateStatus: (status) => (
+               instance.put(`/profile/status`, { status })
                     .then(response => response.data))
      },
-
      authAPI = {
-          getMe: (me) => (
-               instance.get(`auth/${me}`)
+          getMe: () => (
+               instance.get(`auth/me`)
+                    .then(response => response.data)),
+          login: (email, password, rememberMe = false, captcha) => (
+               instance.post(`auth/login`,{email, password, rememberMe, captcha})
+                    .then(response => response.data)),
+          logout: () => (
+               instance.delete(`auth/login`)
                     .then(response => response.data))
-          
      },
-
+     securityAPI = {
+          getCaptcha: () => (
+               instance.get(`security/get-captcha-url`)
+                    .then(response => response.data))
+     },
      followAPI = {
           follow: (userId) => (
                instance.post(`follow/${userId}`)

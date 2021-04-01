@@ -5,10 +5,35 @@ body{
   background: linear-gradient(260deg, rgba(62,34,195,1) 0%, rgba(253,45,117,1) 100%);
   background-size: 400% 400%;
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
   animation: gradientAnim 30s ease infinite;
   margin: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,800;1,300;1,400;1,800&display=swap');
+
+@font-face{
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face{
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
 
 textarea:focus,input:focus,button:focus{
   outline: none;

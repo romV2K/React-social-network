@@ -1,13 +1,22 @@
 import Messages from './Messages'
 import { connect } from 'react-redux';
+import React from 'react';
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 
-let mapStateToProps = state=>{
-  return{
-    dialogs : state.messagesPage.dialogs
+class MessagesContainer extends React.Component {
+
+  render() {
+    return <Messages {...this.props} />
   }
 }
 
-const MessagesContainer = connect(mapStateToProps)(Messages)
 
-export default MessagesContainer;
+let mapStateToProps = state => {
+  return {
+    dialogs: state.messagesPage.dialogs
+  }
+}
+
+export default compose(connect(mapStateToProps, {}), withAuthRedirect)(MessagesContainer)

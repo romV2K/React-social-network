@@ -11,13 +11,17 @@ const Header = (props) => {
       <div className={`${styles.imgDiv}`}>
         <p>React Society</p>
       </div>
-      <NavLink to={!props.isAuth ? '/login' : '/exit'}>
+      <NavLink 
+        to={!props.isAuth ? '/login' : '/logout'}
+        onClick={!props.isAuth ? null : props.logout}>
         <div className={styles.loginBlock}>
           <div className={styles.avatarContainer}>
             <img src={!props.userIcon || props.userIcon === '' ? userIcon : props.userIcon} alt={`${props.login}'s avatar`} />
           </div>
           {props.isAuth ? <span className={styles.login}> {props.login} </span> : null}
-          <img src={loginIcon} alt='login' />
+          <img src={loginIcon} 
+            alt={ !props.isAuth ? 'login' : 'logout' } 
+            title = { !props.isAuth ? 'login' : 'logout' }/>
         </div>
       </NavLink>
     </header>
