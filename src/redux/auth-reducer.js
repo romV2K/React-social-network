@@ -50,7 +50,7 @@ const authReducer = (state = intialStore, action) => {
 
 }
 
-export const setUserData = (id, login, email, isAuth, captcha, messages ) => ({ type: SET_USER_DATA, data: { id, login, email, isAuth, captcha, messages} })
+export const setUserData = (id, login, email, isAuth, captcha, messages) => ({ type: SET_USER_DATA, data: { id, login, email, isAuth, captcha, messages } })
 export const setProfilePhoto = (userIcon) => ({ type: SET_PROFILE_PHOTO, userIcon })
 export const setIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching })
 export const setIsAuthFalse = () => ({ type: SET_IS_AUTH_FALSE })
@@ -59,7 +59,7 @@ export const setCaptcha = (url) => ({ type: SET_CAPTCHA, url })
 
 export const getMe = (profile) => {
      return dispatch => {
-          authAPI.getMe()
+          return authAPI.getMe()
                .then(data => {
                     let { id, login, email } = data.data
                     if (!id && !login && !email) {
